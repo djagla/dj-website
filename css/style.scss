@@ -1,0 +1,515 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 14px;
+    line-height: 22px;
+    background-color: white;
+    color: black;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    height: 100vh;
+    padding: 0 20px;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.logo {
+    display: grid;
+    justify-items: center;
+    align-items: center;
+    position: relative;
+
+    &__symbol {
+        height: 25vh;
+        grid-column: 1;
+        grid-row: 1;
+    }
+
+    &__text {
+        font-size: 10vh;
+        grid-column: 1;
+        grid-row: 1;
+        opacity: 0;
+        transform: rotateY(180deg);
+    }
+}
+
+.lego {
+    font-family: 'Roboto Condensed', sans-serif;
+    font-size: 14px;
+    text-transform: uppercase;
+
+    position: absolute;
+    height: 25vh;
+    width: 25vh;
+    grid-column: 1;
+    grid-row: 1;
+
+    font-size: 10vh;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
+    left: 50%;
+    transform: translateX(-100%);
+    clip-path: circle(0%);
+
+    &:before {
+        content: '';
+        display: block;
+        width: 100%;
+        height: 100%;
+        background-color: #e41b23;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -1;
+        border-radius: 50%;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+    }
+}
+
+.atari-logo {
+    position: absolute;
+    height: 25vh;
+    width: 31.25vh;
+    grid-column: 1;
+    grid-row: 1;
+    left: 50%;
+    opacity: 0;
+
+    &__container {
+        height: 100%;
+        width: 100%;
+        position: absolute;
+
+        &:before {
+            content: "";
+            background-repeat: no-repeat;
+            background-size: auto 25vh;
+            background-position: left top;
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            display: block;
+            top: 0;
+        }
+
+        &:after {
+            content: "";
+            background: url(../images/dj_atari.svg);
+            background-repeat: no-repeat;
+            background-size: auto 25vh;
+            background-position: left top;
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            display: block;
+            top: 0;
+        }
+
+        &.green {
+            animation-name: glitch-animation-1;
+            animation-duration: 2s;
+            animation-timing-function: linear;
+            animation-delay: 0s;
+            animation-iteration-count: infinite;
+            animation-direction: reverse-alternate;
+            left: 0.3vh;
+
+            &:before {
+                left: -0.4vh;
+                background-image: url(../images/dj_atari_y.svg);
+            }
+        }
+
+        &.blue {
+            animation-name: glitch-animation-2;
+            animation-duration: 2s;
+            animation-timing-function: linear;
+            animation-delay: 0s;
+            animation-iteration-count: infinite;
+            animation-direction: reverse-alternate;
+            left: -0.3vh;
+
+            &:before {
+                left: -0.4vh;
+                background-image: url(../images/dj_atari_y.svg);
+            }
+        }
+
+
+        img {
+            height: 100%;
+        }
+    }
+}
+
+
+p {
+    margin-top: 10vh;
+    font-size: 5vh;
+    line-height: 6vh;
+    text-align: center;
+}
+
+
+
+.navigation {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    justify-self: center;
+
+    &__item {
+        padding: 2vh;
+
+        a {
+            color: black;
+            font-size: 2em;
+            text-decoration: none;
+
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+    }
+}
+
+
+
+/*ANIMATION*/
+@keyframes rotateAnimation {
+
+    30%,
+    100% {
+        transform: rotateY(360deg);
+        opacity: 1;
+    }
+
+    0% {
+        transform: rotateY(0deg);
+        opacity: 1;
+    }
+
+    5% {
+        transform: rotateY(90deg);
+        opacity: 0;
+    }
+
+    10% {
+        transform: rotateY(180deg);
+        opacity: 0;
+    }
+
+    20% {
+        transform: rotateY(180deg);
+        opacity: 0;
+    }
+
+    25% {
+        transform: rotateY(270deg);
+        opacity: 0;
+    }
+}
+
+
+.animate {
+    animation: rotateAnimation 10s infinite;
+    animation-delay: 20s;
+}
+
+/*ANIMATION 2*/
+@keyframes rotateAnimation2 {
+
+    30%,
+    100% {
+        transform: rotateY(90deg);
+        opacity: 0;
+    }
+
+    0% {
+        transform: rotateY(180deg);
+        opacity: 0;
+    }
+
+    5% {
+        transform: rotateY(270deg);
+        opacity: 0;
+    }
+
+    10% {
+        transform: rotateY(360deg);
+        opacity: 1
+    }
+
+    20% {
+        transform: rotateY(360deg);
+        opacity: 1
+    }
+
+    25% {
+        transform: rotateY(450deg);
+        opacity: 0;
+    }
+}
+
+
+.animate2 {
+    animation: rotateAnimation2 10s infinite;
+    animation-delay: 20s;
+}
+
+/*ANIMATION 3*/
+@keyframes rotateAnimation3 {
+
+    50%,
+    65% {
+        //transform: rotateY(360deg);
+        opacity: 1;
+    }
+
+    75% {
+        opacity: 0
+    }
+
+    100% {
+        opacity: 0;
+    }
+
+    0% {
+        opacity: 0;
+    }
+
+    40% {
+        opacity: 0;
+    }
+}
+
+/*ANIMATION 4*/
+@keyframes rotateAnimation4 {
+
+    80%,
+    90% {
+        clip-path: circle(100%);
+    }
+
+    100% {
+        clip-path: circle(0%);
+    }
+
+    0% {
+        clip-path: circle(0%);
+    }
+
+    70% {
+        clip-path: circle(0%);
+    }
+}
+
+
+.animate3 {
+    animation: rotateAnimation3 10s infinite;
+    animation-delay: 20s;
+}
+
+.animate4 {
+    animation: rotateAnimation4 10s infinite;
+    animation-delay: 20s;
+    animation-timing-function: ease-in-out;
+}
+
+
+/*GLITCH*/
+@keyframes glitch-animation-1 {
+    $steps: 20;
+
+    @for $i from 0 through $steps {
+        #{percentage($i*(1/$steps))} {
+            clip: rect(random(32)+vh, 32vh, random(32)+vh, 0);
+        }
+    }
+}
+
+@keyframes glitch-animation-2 {
+    $steps: 20;
+
+    @for $i from 0 through $steps {
+        #{percentage($i*(1/$steps))} {
+            clip: rect(random(32)+vh, 32vh, random(32)+vh, 0);
+        }
+    }
+}
+
+/******************************************************************/
+/* LOADING PANELS */
+/******************************************************************/
+
+.loading-panel {
+    margin: 30px 0;
+}
+
+.circle {
+    width: 100px;
+    height: 100px;
+    border-radius: 100px;
+    border: 20px solid red;
+    border-left-color: transparent;
+    border-bottom-color: transparent;
+
+    animation: rotateLoadingAnimation 20s infinite;
+    //animation-timing-function: linear;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &:before {
+        content: '';
+        display: block;
+        width: 60px;
+        height: 60px;
+        border-radius: 60px;
+        border: 20px solid rgba(255, 0, 0, 1);
+        border-right-color: transparent;
+        border-top-color: transparent;
+        position: absolute;
+
+        animation: rotateLoadingAnimation2 5s infinite;
+        //animation-timing-function: linear;
+
+    }
+
+    &:after {
+        content: '';
+        display: block;
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        border: 20px solid rgba(255, 0, 0, 1);
+        border-left-color: transparent;
+        border-bottom-color: transparent;
+        position: absolute;
+
+        animation: rotateLoadingAnimation3 0.25s infinite;
+        animation-timing-function: linear;
+
+    }
+}
+
+
+
+@keyframes rotateLoadingAnimation {
+    $steps: 20;
+
+    @for $i from 0 through $steps {
+        #{percentage($i*(1/$steps))} {
+            transform: rotate(random(360)+deg);
+        }
+    }
+}
+
+@keyframes rotateLoadingAnimation2 {
+    $steps: 20;
+
+    @for $i from 0 through $steps {
+        #{percentage($i*(1/$steps))} {
+            transform: rotate(random(360)+deg);
+            //opacity: random(10)*0.1;
+        }
+    }
+}
+
+@keyframes rotateLoadingAnimation3 {
+
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(-360deg);
+    }
+}
+
+
+.histogram {
+    width: 150px;
+
+    span {
+        display: block;
+        height: 20px;
+        background-color: red;
+        width: 150px;
+        position: relative;
+        animation: histogramAnimation 5s infinite;
+        animation-timing-function: linear;
+
+        &:before {
+            content: '';
+            display: block;
+            height: 20px;
+            width: 150px;
+            background-color: red;
+            position: absolute;
+            top: -25px;
+            animation: histogramAnimation2 5s infinite;
+            animation-timing-function: linear;
+        }
+
+        &:after {
+            content: '';
+            display: block;
+            height: 20px;
+            width: 150px;
+            background-color: red;
+            position: absolute;
+            bottom: -25px;
+            animation: histogramAnimation3 5s infinite;
+            animation-timing-function: linear;
+        }
+    }
+}
+
+@keyframes histogramAnimation {
+    $steps: 20;
+
+    @for $i from 0 through $steps {
+        #{percentage($i*(1/$steps))} {
+            width: random(150)+px;
+        }
+    }
+}
+
+@keyframes histogramAnimation2 {
+    $steps: 20;
+
+    @for $i from 0 through $steps {
+        #{percentage($i*(1/$steps))} {
+            width: random(150)+px;
+        }
+    }
+}
+
+@keyframes histogramAnimation3 {
+    $steps: 20;
+
+    @for $i from 0 through $steps {
+        #{percentage($i*(1/$steps))} {
+            width: random(150)+px;
+        }
+    }
+}
