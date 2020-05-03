@@ -1,0 +1,34 @@
+{
+  "name": "dj-website",
+  "version": "1.0.0",
+  "description": "My personal website",
+  "main": "index.js",
+  "scripts": {
+    "build:scss": "node-sass --output-style compressed -o dist/styles src/styles",
+    "watch:scss": "onchange -i -v src/styles/*.scss -- npm run build:scss",
+    "lint:js": "eslint --fix src/js/*.js",
+    "watch:js": "onchange -i -v src/js/*.js -- npm run lint:js",
+    "start": "browser-sync -s -f -w",
+    "watch:all": "parallelshell \"npm start\" \"npm run watch:scss\" \"npm run watch:js\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/djagla/dj-website.git"
+  },
+  "author": "Daniel Jagla",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/djagla/dj-website/issues"
+  },
+  "homepage": "https://github.com/djagla/dj-website#readme",
+  "devDependencies": {
+    "browser-sync": "^2.26.7",
+    "eslint": "^6.8.0",
+    "eslint-config-airbnb-base": "^14.1.0",
+    "eslint-plugin-import": "^2.20.2",
+    "node-sass": "^4.14.0",
+    "onchange": "^7.0.2",
+    "parallelshell": "^3.0.1"
+  },
+  "dependencies": {}
+}
